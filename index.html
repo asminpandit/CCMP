@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="calculator">
+        <input id="display" type="text" readonly>
+        <div class="buttons">
+            <!-- Number buttons -->
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+
+            <!-- Operation buttons -->
+            <button onclick="calculate()">=</button>
+            <button onclick="backspace()">←</button>
+            <button onclick="clearAll()">C</button>
+
+            <!-- Scientific functions buttons -->
+            <button onclick="pi()">π</button>
+            <button onclick="squared()">√</button>
+            <button onclick="cos()">Cos</button>
+            <button onclick="cosh()">Cosh</button>
+            <button onclick="tan()">Tan</button>
+            <button onclick="tanh()">Tanh</button>
+            <button onclick="sin()">Sin</button>
+            <button onclick="sinh()">Sinh</button>
+            <button onclick="log()">Log</button>
+            <button onclick="exp()">Exp</button>
+            <button onclick="acosh()">Acosh</button>
+            <button onclick="asinh()">Asinh</button>
+            <button onclick="expm1()">Expm1</button>
+            <button onclick="lgamma()">Lgamma</button>
+            <button onclick="degrees()">Deg</button>
+            <button onclick="log2()">Log2</button>
+            <button onclick="log10()">Log10</button>
+            <button onclick="log1p()">Log1p</button>
+            
+        </div>
+    </div>
+    <div id="matrixModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeMatrixModal()">&times;</span>
+            <h2>Matrix Multiplication</h2>
+            <div class="matrix-input">
+                <h3>Enter the values of Matrix A:</h3>
+                <div>
+                    <input type="number" id="matrixA-1-1" placeholder="1,1">
+                    <input type="number" id="matrixA-1-2" placeholder="1,2">
+                    <input type="number" id="matrixA-1-3" placeholder="1,3">
+                </div>
+                <div>
+                    <input type="number" id="matrixA-2-1" placeholder="2,1">
+                    <input type="number" id="matrixA-2-2" placeholder="2,2">
+                    <input type="number" id="matrixA-2-3" placeholder="2,3">
+                </div>
+                <div>
+                    <input type="number" id="matrixA-3-1" placeholder="3,1">
+                    <input type="number" id="matrixA-3-2" placeholder="3,2">
+                    <input type="number" id="matrixA-3-3" placeholder="3,3">
+                </div>
+            </div>
+            <div class="matrix-input">
+                <h3>Enter the values of Matrix B:</h3>
+                <div>
+                    <input type="number" id="matrixB-1-1" placeholder="1,1">
+                    <input type="number" id="matrixB-1-2" placeholder="1,2">
+                    <input type="number" id="matrixB-1-3" placeholder="1,3">
+                </div>
+                <div>
+                    <input type="number" id="matrixB-2-1" placeholder="2,1">
+                    <input type="number" id="matrixB-2-2" placeholder="2,2">
+                    <input type="number" id="matrixB-2-3" placeholder="2,3">
+                </div>
+                <div>
+                    <input type="number" id="matrixB-3-1" placeholder="3,1">
+                    <input type="number" id="matrixB-3-2" placeholder="3,2">
+                    <input type="number" id="matrixB-3-3" placeholder="3,3">
+                </div>
+            </div>
+            <button onclick="performMatrixMultiplication()">Multiply</button>
+        </div>
+    </div>
+
+    <button onclick="openMatrixModal()">Matrix Multiplication</button>
+    <script src="script.js"></script>
+</body>
+</html>
